@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 
+
 public class Aeropuerto {
 	private String nombre;
 	private String localizacion;
