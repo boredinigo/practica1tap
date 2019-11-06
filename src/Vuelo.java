@@ -1,24 +1,28 @@
-
+import java.util.ArrayList;
 
 public class Vuelo {
 	private int idVuelo = 0;
 	private int nPasajeros;
+	
 	private String origen;
 	private String destino;
-	private int modeloAvion;
-	
-	
+	private int idAvion;
+	ArrayList<Pasajero> pasajeros = new ArrayList<Pasajero>();
 
-	public Vuelo(int nPasajeros, String origen, String destino, int modeloAvion) {
+	public Vuelo(int capacidadVuelo, String origen, String destino, int idAvion) {
 		idVuelo++;
 		
 		
 	}
 	
-	public void AnadirPasajeros() {
+	public void AnadirPasajeros(int nMaletas, String nombreYApellidos) {
 		
+		pasajeros.add(new Pasajero(nMaletas, nombreYApellidos, this.idVuelo));
 		
 	}
+	
+	
+	
 	
 	// Getters Y Setters
 	
@@ -31,35 +35,24 @@ public class Vuelo {
 	
 
 
-	public int getModeloAvion() {
-		return modeloAvion;
-	}
-	
-	public void setModeloAvion(int modeloAvion) {
-		this.modeloAvion = modeloAvion;
+	public int getIdAvion() {
+		return idAvion;
 	}
 	
 	
 	public int getnPasajeros() {
 		return nPasajeros;
 	}
-	public void setnPasajeros(int nPasajeros) {
-		this.nPasajeros = nPasajeros;
-	}
 	
 	
 	public String getOrigen() {
 		return origen;
 	}
-	public void setOrigen(String origen) {
-		this.origen = origen;
-	}
+	
 	
 	
 	public String getDestino() {
 		return destino;
 	}
-	public void setDestino(String destino) {
-		this.destino = destino;
-	}
+	
 }

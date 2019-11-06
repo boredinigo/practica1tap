@@ -6,8 +6,10 @@ public class Aeropuerto {
 	private String nombre;
 	private String localizacion;
 	ArrayList<Vehiculo> flota = new ArrayList<Vehiculo>();
-	ArrayList<Pasajero> pasajeros = new ArrayList<Pasajero>();
 	ArrayList<Vuelo> vuelos = new ArrayList<Vuelo>();
+	ArrayList<Pista> pistas = new ArrayList<Pista>();
+	int contadorPasajeros = 0;
+	
 	
 	
 	// Getters y Setters
@@ -76,10 +78,18 @@ public class Aeropuerto {
 		
 	}
 	
-	public void NuevoVuelo(String origen, String destino, int nPasajeros, int modeloAvion) {
-		vuelos.add(new Vuelo(nPasajeros, origen, destino, modeloAvion));
+	public void NuevoVuelo(String origen, String destino, int capacidadVuelo, int modeloAvion) {
+		vuelos.add(new Vuelo(capacidadVuelo, origen, destino, modeloAvion));
 	}
 	
+	public void NuevaPista() {
+		pistas.add(new Pista());
+	}
+	
+	
+	public void AnadirPasajeroVuelo(int nMaletas, String nombreYApellidos, int idVuelo) {
+		vuelos.get(idVuelo).AnadirPasajeros(nMaletas, nombreYApellidos);
+	}
 	
 	
 }

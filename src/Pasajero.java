@@ -1,25 +1,31 @@
 
 public class Pasajero {
 
-	public Pasajero() {
-		
+	private int idVuelo;
+	private int nMaletas;
+	private String nombreYApellidos;
+	
+	
+
+	public Pasajero(int nMaletas, String nombreYApellidos, int idVuelo) {
+		this.idVuelo = idVuelo;
+		this.nombreYApellidos = nombreYApellidos;
+		this.nMaletas = nMaletas;
 	}
 	
 	
-	private int idVuelo;
 		
 	public int getIdVuelo() {
 		return idVuelo;
 	}
-
-
-
-
-	public void setIdVuelo(int idVuelo) {
-		this.idVuelo = idVuelo;
+	
+	public int getnMaletas() {
+		return nMaletas;
 	}
 
-
-
+	public String getNombreYApellidos() {
+		return nombreYApellidos;
+	}
+	
 
 }
